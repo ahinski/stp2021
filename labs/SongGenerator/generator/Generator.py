@@ -41,6 +41,7 @@ class Generator:
             text += self.__verse(n_lines_verse)
             text += '\n'
             text += chorus
+            text += '\n'
         return text          
             
     def __verse(self, n_lines):
