@@ -35,7 +35,7 @@ class Crawler:
         for file in os.listdir(self.path):
             filename = os.fsdecode(file)
             if filename.endswith(".txt"):
-                with open(self.path + '\\' + filename, 'r') as file:
+                with open(self.path + '\\' + filename, encoding = 'utf-8', mode='r') as file:
                     lines_file = file.readlines()
                     lines += lines_file
         lines.remove('\n')
