@@ -38,6 +38,7 @@ class Crawler:
                 with open(self.path + '\\' + filename, encoding = 'utf-8', mode='r') as file:
                     lines_file = file.readlines()
                     lines += lines_file
-        lines.remove('\n')
         lines = [line + '\n' if line[-1:] != '\n' else line for line in lines]
+        lines.remove('\n')
+        lines = list(set(lines))
         return lines
