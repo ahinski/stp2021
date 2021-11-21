@@ -22,18 +22,22 @@ class Crawler:
             self.path = path
         else:
             raise ValueError('Provided path is not a directory.')
-        self.__song_names = os.listdir(self.path)
+        self.__file_names = os.listdir(self.path)
         
-    @property
     def song_names(self):
-        return self.__song_names
+        song_names = []
+        for song_name in self.__file_names:
+            song_names.append(song_name[:-3])
+        return song_names
     
     def song_lines(self):
         lines = []
         for file in os.listdir(self.path):
             filename = os.fsdecode(file)
             if filename.endswith(".txt"):
-                with open(filename) as file:
+                with open(self.path + '\\' + filename, 'r') as file:
                     lines_file = file.readlines()
-                    lines.append(lines_file.rstrip() for line in lines)
+                    lines += lines_file
+        lines.remove('\n')
+        lines = [line + '\n' if line[-1:] != '\n' else line for line in lines]
         return lines
