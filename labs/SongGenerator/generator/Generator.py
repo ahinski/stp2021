@@ -55,8 +55,8 @@ class Generator:
         -------
         str: text of generated verse
         """
+        verse_text = ''
         for n in n_lines:
-            verse_text = ''
             random_number = random.randint(0,len(self.lines))
             verse_text += self.lines[random_number]
             self.lines.remove(self.lines[random_number])
