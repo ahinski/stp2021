@@ -7,12 +7,12 @@ class Generator:
         Attributes
         ----------
         lines : str
-            lines used to create new song
+            lines used to create new song.
         
         Methods
         -------
-        song_names()
-            Returns song names (names of files in dir) in list.
+        generate_song()
+            Returns text of new song.
         song_lines()
             Returns all lines from songs in list.    
     """
