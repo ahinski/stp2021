@@ -1,5 +1,4 @@
 import os
-from typing import Text
 class Saver:
     """A class that represents song saver.
    
@@ -32,5 +31,6 @@ class Saver:
     def save(self):
         """Saves a new song to a specified dir
         """
-        with open(self.path + '/' + self.name, "w+") as file:
+        with open(self.path + '/' + self.name + '.txt', "w+") as file:
             file.write(self.text)
+        file.close()
