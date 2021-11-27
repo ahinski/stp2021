@@ -32,5 +32,5 @@ class Saver:
     def save(self):
         """Saves a new song to a specified dir
         """
-        with open(self.path + '/' + name, "w+") as file:
+        with open(self.path + '/' + self.name, "w+") as file:
             file.write(self.text)
